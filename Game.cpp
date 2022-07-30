@@ -34,9 +34,14 @@ void Game::pollEvents() {
     }
 }
 
+void Game::updateCollision() {
+    
+}
+
 void Game::update() {
     this->pollEvents();
     this->p1.update(this->window); // call player update function
+    this->ball.update(this->window);
 }
 
 void Game::render() {
@@ -44,6 +49,7 @@ void Game::render() {
 
     // TODO: draw stuff here
     this->p1.render(this->window); // call player render function
+    this->ball.render(this->window);
 
     this->window->display(); // display new drawing
 }

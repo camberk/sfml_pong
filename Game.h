@@ -11,6 +11,7 @@ private:
     sf::Event event; // used for event polling
 
     Player p1;
+    Ball ball;
 
     // init functions
     void initVars();
@@ -21,6 +22,8 @@ public:
     // functions
     void run();
     void pollEvents();
+    void updateCollision();
+
     void update();
     void render();
 
