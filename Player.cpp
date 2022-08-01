@@ -17,12 +17,22 @@ Player::~Player()
 
 }
 
+const sf::RectangleShape Player::getShape() const {
+    return this->paddleShape;
+}
+
+const int Player::getDirection() const {
+    return this->direction;
+}
+
 void Player::updateMovement() {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
         this->paddleShape.move(0.f, -moveSpeed);
+        this->direction = -1;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
         this->paddleShape.move(0.f, moveSpeed);
+        this->direction = 1;
     }
 }
 

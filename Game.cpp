@@ -35,13 +35,18 @@ void Game::pollEvents() {
 }
 
 void Game::updateCollision() {
-    
+    if(this->p1.getShape().getGlobalBounds().intersects(this->ball.getShape().getGlobalBounds())) {
+        
+        this->ball.updateVelocity(this->p1.getDirection() * rand() % 10 + 1);
+
+    }
 }
 
 void Game::update() {
     this->pollEvents();
     this->p1.update(this->window); // call player update function
     this->ball.update(this->window);
+    this->updateCollision();
 }
 
 void Game::render() {

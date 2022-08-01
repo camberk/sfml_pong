@@ -11,7 +11,8 @@ class Ball
 private:
     sf::CircleShape ballShape;
 
-    int maxVel;
+    int maxXVel;
+    int maxYVel;
     int xVel;
     int yVel;
 
@@ -24,7 +25,7 @@ public:
     const sf::CircleShape getShape() const;
 
     void updateBallPosition();
-
+    void updateVelocity(float y);
     void update(const sf::RenderTarget* target);
     void render(sf::RenderTarget* target);
 

@@ -4,7 +4,8 @@ void Ball::initVars() {
     this->ballShape.setFillColor(sf::Color::White);
     this->ballShape.setRadius(20.f);
     this->ballShape.setPosition(sf::Vector2f(960.f,540.f));
-    this->maxVel = 20;
+    this->maxXVel = 20;
+    this->maxYVel = 10;
     this->xVel = 10;
     this->yVel = 0;
 }
@@ -25,6 +26,11 @@ const sf::CircleShape Ball::getShape() const {
 
 void Ball::updateBallPosition() {
     this->ballShape.move(sf::Vector2f(-this->xVel, this->yVel));
+}
+
+void Ball::updateVelocity(float y) {
+    this->xVel = -xVel;
+    this->yVel = y + yVel;
 }
 
 void Ball::update(const sf::RenderTarget* target) {
