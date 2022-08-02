@@ -4,7 +4,7 @@ void Player::initVars() {
     this->moveSpeed = 15;
     this->paddleShape.setSize(sf::Vector2f(30.f,150.f));
     this->paddleShape.setFillColor(sf::Color::White);
-    this->paddleShape.setPosition(sf::Vector2f(20.f, 0.f));
+    this->paddleShape.setPosition(sf::Vector2f(20.f, 450.f));
 }
 
 Player::Player()

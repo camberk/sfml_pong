@@ -37,7 +37,7 @@ void Game::pollEvents() {
 void Game::updateCollision() {
     if(this->p1.getShape().getGlobalBounds().intersects(this->ball.getShape().getGlobalBounds())) {
         
-        this->ball.updateVelocity(this->p1.getDirection() * rand() % 10 + 1);
+        this->ball.updateVelocity(this->p1.getDirection() * rand() % 7 + 1);
 
     }
 }
