@@ -12,6 +12,7 @@ private:
     sf::Event event; // used for event polling
 
     Player p1;
+    Player p2;
     Ball ball;
 
     // init functions

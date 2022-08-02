@@ -10,10 +10,10 @@ private:
     int moveSpeed;
     int direction;
 
-    void initVars();
+    void initVars(sf::Vector2f startPos);
 
 public:
-    Player();
+    Player(sf::Vector2f startPos);
     ~Player();
 
     const sf::RectangleShape getShape() const;

@@ -1,15 +1,15 @@
 #include "Player.h"
 
-void Player::initVars() {
+void Player::initVars(sf::Vector2f startPos) {
     this->moveSpeed = 15;
     this->paddleShape.setSize(sf::Vector2f(30.f,150.f));
     this->paddleShape.setFillColor(sf::Color::White);
-    this->paddleShape.setPosition(sf::Vector2f(20.f, 450.f));
+    this->paddleShape.setPosition(startPos);
 }
 
-Player::Player()
+Player::Player(sf::Vector2f startPos)
 {
-    this->initVars();
+    this->initVars(startPos);
 }
 
 Player::~Player()

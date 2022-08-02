@@ -7,6 +7,7 @@ void Game::initVars() {
 }
 
 Game::Game()
+    : p1(sf::Vector2f(20.f, 450.f)), p2(sf::Vector2f(1880.f, 450.f))
 {
     this->initVars();
 }
