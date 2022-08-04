@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.h"
+#include "comp.h"
 #include <iostream>
 
 
@@ -12,7 +13,7 @@ private:
     sf::Event event; // used for event polling
 
     Player p1;
-    Player p2;
+    comp p2;
     Ball ball;
 
     // init functions
@@ -25,6 +26,7 @@ public:
     void run();
     void pollEvents();
     void updateCollision();
+    void updateCompMovement();
 
     void update();
     void render();

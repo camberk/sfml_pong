@@ -23,6 +23,7 @@ public:
     ~Ball();
 
     const sf::CircleShape getShape() const;
+    const sf::Vector2f& getPosition() const;
 
     void updateBallPosition();
     void updateVelocity(float y);

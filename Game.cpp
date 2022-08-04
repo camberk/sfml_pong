@@ -38,14 +38,24 @@ void Game::pollEvents() {
 void Game::updateCollision() {
     if(this->p1.getShape().getGlobalBounds().intersects(this->ball.getShape().getGlobalBounds())) {
         
-        this->ball.updateVelocity(this->p1.getDirection() * rand() % 7 + 1);
+        this->ball.updateVelocity(this->p1.getDirection() * rand() % 12 + 1);
 
     }
+    if(this->p2.getShape().getGlobalBounds().intersects(this->ball.getShape().getGlobalBounds())) {
+        
+        this->ball.updateVelocity(this->p2.getDirection() * rand() % 12 + 1);
+
+    }
+}
+
+void Game::updateCompMovement() {
+    this->p2.updateMovement(this->ball.getPosition());
 }
 
 void Game::update() {
     this->pollEvents();
     this->p1.update(this->window); // call player update function
+    this->updateCompMovement(); // p2 update
     this->ball.update(this->window);
     this->updateCollision();
 }
@@ -55,6 +65,7 @@ void Game::render() {
 
     // TODO: draw stuff here
     this->p1.render(this->window); // call player render function
+    this->p2.render(this->window);
     this->ball.render(this->window);
 
     this->window->display(); // display new drawing
